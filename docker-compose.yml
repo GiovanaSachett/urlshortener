@@ -1,0 +1,39 @@
+services:
+  web:
+    labels:
+        servicename: "urlshortener"
+    container_name: urlshortener
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    ports:
+      - 8000:8000
+    networks:
+      - backend
+  prometheus:
+    image: prom/prometheus:v2.30.3
+    ports:
+      - 9000:9090
+    volumes:
+      - ./prometheus:/etc/prometheus
+      - prometheus-data:/prometheus
+    command: --web.enable-lifecycle  --config.file=/etc/prometheus/prometheus.yml
+    networks:
+      - backend
+  grafana:
+    image: grafana/grafana
+    container_name: grafana
+    restart: always
+    ports:
+      - 3000:3000
+    networks:
+      - backend
+
+volumes:
+  prometheus-data:
+
+networks:
+  backend:
+
+
+

@@ -14,7 +14,7 @@ class URLView(viewsets.ViewSet):
         except UrlHashCollisionException:
             return HttpResponse("hash collision", status=500)
 
-        return HttpResponse("http://0.0.0.0:8000/" + shortened_url)
+        return HttpResponse("http://0.0.0.0:8000/u/" + shortened_url)
 
     def retrieve(self, request, pk):
         try:

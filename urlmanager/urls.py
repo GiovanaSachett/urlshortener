@@ -5,6 +5,6 @@ from . import views
 from rest_framework.routers import DefaultRouter
 
 router = DefaultRouter()
-router.register(r'', views.URLView, basename='urls')
+router.register(r'u', views.URLView, basename='urls')
 
 urlpatterns = router.urls

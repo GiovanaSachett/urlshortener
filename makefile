@@ -5,4 +5,10 @@ test:
 	docker build -t urlshortener . && docker run urlshortener sh -c "python manage.py test"
 
 stress-test:
-	siege -t60S -f test-urls.txt
+	docker build -t urlshortener . && docker run urlshortener sh -c "siege -t60S -f test-urls.txt"
+
+stop:
+    docker stop urlshortener
+
+clean:
+    docker rm urlshortener && docker rmi urlshortener

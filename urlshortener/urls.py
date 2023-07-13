@@ -18,5 +18,6 @@ from django.urls import path, include
 
 urlpatterns = [
     path("", include("urlmanager.urls")),
+    path('', include('django_prometheus.urls')),
     path('admin/', admin.site.urls),
 ]

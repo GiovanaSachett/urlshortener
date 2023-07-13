@@ -1,13 +1,7 @@
 # URL Shortener
-A 
+Technical chalange
 
 ## Description
-The project has one main app that is the urlshotener, it has the main configurations of the project. Also, there is the urlmanager app that is responsible for the url operations. In this app we have two main files:
-- `views.py`: creates the views, i.e., our endpoints, makes the calls to the service;
-- `service.py`: responsible to make the operations with the database.
-
-![image](https://github.com/GiovanaSachett/urlshortener/assets/23011531/b91f3b66-68a1-4925-97a1-98ad261416e1)
-
 
 ## Running
 
